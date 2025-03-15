@@ -4,7 +4,10 @@
 
 <script>
 function Url2Clipbboard() {
-  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
+  var url = window.location;
+  let params = new URLSearchParams(url.search);
+  let t = params.has('t')
+//  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
   alert ("Hello");
   alert(t);
 }
