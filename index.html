@@ -4,10 +4,10 @@
 
 <script>
   function Url2Clipboard() {
-    alert ("Hello1");
     var url = window.location;
     let params = new URLSearchParams(url.search);
-    let t = params.has('t')
+    let t = 
+    navigator.clipboard.writeText(params.get('t'));
 //  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
     alert ("Hello2");
     alert(t);
