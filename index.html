@@ -6,7 +6,7 @@
   function Url2Clipboard() {
     var url = window.location;
     let params = new URLSearchParams(url.search);
-    let copyText = params.get('t');
+    let copyText = document.querySelector(params.get('t'));
         copyText.select();
     try {
       const success = document.execCommand('copy');
@@ -17,7 +17,7 @@
     
 //    navigator.clipboard.writeText(params.get('t'));
 //  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
-    alert ("Hello4");
+    alert ("Hello5");
     alert(t);
   }
 </script>
