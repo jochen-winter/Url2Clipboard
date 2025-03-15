@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body onload="Url2Clipbboard()">
+
 <script>
-  window.onload=()=>(t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
+function Url2Clipbboard() {
+  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
+}
 </script>
-<input readonly class=t>
-<input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');">
-<div class=a style=display:none>
+
+</body>
+</html>
+
