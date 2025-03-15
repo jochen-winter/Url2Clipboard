@@ -6,22 +6,16 @@
   function Url2Clipboard() {
     var url = window.location;
     let params = new URLSearchParams(url.search);
-
-const textArea = document.createElement('textarea');
-    textArea.value = params.get('t');
-    textArea.style.opacity = 0;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
+    let copyText = params.get('t');
+        copyText.select();
     try {
       const success = document.execCommand('copy');
       console.log(`Text copy was ${success ? 'successful' : 'unsuccessful'}.`);
     } catch (err) {
       console.error(err.name, err.message);
     }
-    document.body.removeChild(textArea);
     
-    navigator.clipboard.writeText(params.get('t'));
+//    navigator.clipboard.writeText(params.get('t'));
 //  (t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)
     alert ("Hello3");
     alert(t);
