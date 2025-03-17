@@ -1,4 +1,9 @@
 <body onload="Url2Clipboard()">
+
+<input readonly class=t>
+<input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');">
+<div class=a style=display:none>
+
   <script>
     function Url2Clipboard() {
       var url = window.location;
@@ -6,4 +11,3 @@
       t.params.get('t');
     }
 </script>
-<input readonly class=t><input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');"><div class=a style=display:none>
