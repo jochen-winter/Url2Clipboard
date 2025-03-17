@@ -1,1 +1,6 @@
-<script>window.onload=()=>(t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)</script><input readonly class=t><input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');"><div class=a style=display:none>
+<script>
+  var url = window.location;
+  let params = new URLSearchParams(url.search);
+  window.onload=()=>t.params.get('t');
+</script>
+<input readonly class=t><input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');"><div class=a style=display:none>
