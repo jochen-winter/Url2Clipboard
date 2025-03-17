@@ -6,10 +6,13 @@
   function Url2Clipboard() {
     var url = window.location;
     let params = new URLSearchParams(url.search);
-    navigator.clipboard.writeText(params.get('t'));
+    let t=params.get('t')
+    //navigator.clipboard.writeText(params.get('t'));
   }
 </script>
-
+<input readonly class=t>
+<input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');">
+<div class=a style=display:none>
+  
 </body>
 </html>
-
