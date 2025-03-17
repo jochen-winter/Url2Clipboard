@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-//<body onload="Url2Clipboard()">
-/*
-<script>
-  function Url2Clipboard() {
-    var url = window.location;
-    let params = new URLSearchParams(url.search);
-    let t=params.get('t')
-    //navigator.clipboard.writeText(params.get('t'));
-  }
-</script>*/
 
-  <script>window.onload=()=>(t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)</script>
+<script>window.onload=()=>(t=document.querySelector('.t')).value=document.querySelector('.a').textContent.substr(3)</script>
 <input readonly class=t>
 <input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');">
 <div class=a style=display:none>
-  
-</body>
-</html>
