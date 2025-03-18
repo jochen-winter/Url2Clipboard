@@ -1,13 +1,43 @@
-<body onload="Url2Clipboard()">
-
-<input readonly class=t>
-<input type=button value="Kopieren" onclick="t.focus();t.select();document.execCommand('copy');">
-<div class=a style=display:none>
-
-  <script>
-    function Url2Clipboard() {
-      var url = window.location;
-      let params = new URLSearchParams(url.search);
-      t.params.get('t');
-    }
-</script>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL-Parameter in Textbox</title>
+    <script>
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        function setTextboxValue() {
+            const paramValue = getParameterByName('text');
+            if (paramValue) {
+                const textbox = document.getElementById('textbox');
+                textbox.value = paramValue;
+                copyToClipboard(paramValue);
+            }
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+               // alert('Text wurde in die Zwischenablage kopiert: ' + text);
+            }).catch(err => {
+                console.error('Fehler beim Kopieren: ', err);
+            });
+        }
+        
+        function copyFromTextbox() {
+            const textbox = document.getElementById('textbox');
+            copyToClipboard(textbox.value);
+        }
+        
+        window.onload = setTextboxValue;
+    </script>
+</head>
+<body>
+    <label for="textbox">Parameterwert:</label>
+    <input type="text" id="textbox">
+    <button onclick="copyFromTextbox()">In Zwischenablage kopieren</button>
+</body>
+</html>
